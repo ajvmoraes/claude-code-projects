@@ -1,0 +1,17 @@
+[Unit]
+Description=VHSYS → TiFlux Webhook Integration
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/vhsys-tiflux
+EnvironmentFile=/opt/vhsys-tiflux/.env
+ExecStart=/opt/vhsys-tiflux/venv/bin/uvicorn app:app --host 0.0.0.0 --port 8000
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
