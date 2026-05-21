@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"/Users/andre.moraes/Library/CloudStorage/OneDrive-AVSTecnologia®/Documentos/ClaudeCode\" && if [ -n \"$(git status --porcelain)\" ]; then git add -A && git commit -m \"chore: auto-sync via Claude Code [$(date +%Y-%m-%dT%H:%M:%S)]\" && git push; fi",
+            "timeout": 60,
+            "statusMessage": "Sincronizando com GitHub..."
+          }
+        ]
+      }
+    ]
+  }
+}

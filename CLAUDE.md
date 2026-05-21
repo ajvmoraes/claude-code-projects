@@ -2,6 +2,40 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## GitHub Repository
+
+This project is synced to **https://github.com/ajvmoraes/claude-code-projects** (public, branch `main`).
+
+### Auto-sync on session end
+
+A `Stop` hook in `.claude/settings.json` runs automatically when Claude Code finishes each session. It:
+1. Checks `git status --porcelain` for any changes.
+2. If changes exist: runs `git add -A`, commits with message `chore: auto-sync via Claude Code [timestamp]`, and `git push`.
+3. If nothing changed: does nothing.
+
+### Manual sync
+
+```bash
+cd "/Users/andre.moraes/Library/CloudStorage/OneDrive-AVSTecnologia®/Documentos/ClaudeCode"
+git add -A
+git commit -m "your message"
+git push
+```
+
+### Initial setup (already done)
+
+```bash
+brew install gh
+gh auth login
+git init && git branch -M main
+gh repo create ajvmoraes/claude-code-projects --public
+gh auth setup-git
+git remote add origin https://github.com/ajvmoraes/claude-code-projects.git
+git push -u origin main
+```
+
+---
+
 ## Repository Layout
 
 This directory contains two independent Python projects:
