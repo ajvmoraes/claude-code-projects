@@ -1,25 +1,25 @@
-# CLAUDE.md
+# AGENTS.md
 
 Quando eu falar sobre API de Tiflux, acesse: https://guia-de-uso.tiflux.com/integracoes/api-tiflux/api-v2
 Quando eu falar sobre API do VHSYS, acesse: https://developers.vhsys.com.br/api/
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
 
 ## GitHub Repository
 
-This project is synced to **https://github.com/ajvmoraes/claude-code-projects** (public, branch `main`).
+This project is synced to **https://github.com/ajvmoraes/Codex-projects** (public, branch `main`).
 
 ### Auto-sync on session end
 
-A `Stop` hook in `.claude/settings.json` runs automatically when Claude Code finishes each session. It:
+A `Stop` hook in `.Codex/settings.json` runs automatically when Codex finishes each session. It:
 1. Checks `git status --porcelain` for any changes.
-2. If changes exist: runs `git add -A`, commits with message `chore: auto-sync via Claude Code [timestamp]`, and `git push`.
+2. If changes exist: runs `git add -A`, commits with message `chore: auto-sync via Codex [timestamp]`, and `git push`.
 3. If nothing changed: does nothing.
 
 ### Manual sync
 
 ```bash
-cd "/Users/andre.moraes/Library/CloudStorage/OneDrive-AVSTecnologia®/Documentos/ClaudeCode"
+cd "/Users/andre.moraes/Library/CloudStorage/OneDrive-AVSTecnologia®/Documentos/Codex"
 git add -A
 git commit -m "your message"
 git push
@@ -31,9 +31,9 @@ git push
 brew install gh
 gh auth login
 git init && git branch -M main
-gh repo create ajvmoraes/claude-code-projects --public
+gh repo create ajvmoraes/Codex-projects --public
 gh auth setup-git
-git remote add origin https://github.com/ajvmoraes/claude-code-projects.git
+git remote add origin https://github.com/ajvmoraes/Codex-projects.git
 git push -u origin main
 ```
 

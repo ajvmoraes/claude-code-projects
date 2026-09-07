@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Sistema de ATAs{% endblock %}</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/" class="topbar-brand">
+        <span class="brand-icon">📋</span>
+        <span class="brand-name">Sistema de ATAs</span>
+      </a>
+      <nav class="topbar-nav">
+        <a href="/" class="nav-link {% if request.url.path == '/' %}active{% endif %}">Dashboard</a>
+        <a href="/atas/new" class="nav-link btn-new">+ Nova ATA</a>
+      </nav>
+      <div class="topbar-user">
+        <span class="user-name">{{ user.name }}</span>
+        <a href="/logout" class="btn-logout" title="Sair">↩ Sair</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

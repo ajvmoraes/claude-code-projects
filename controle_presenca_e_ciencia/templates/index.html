@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — Sistema de ATAs{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div>
+    <h1 class="page-title">Dashboard</h1>
+    <p class="page-sub">Bem-vindo(a), {{ user.name }}</p>
+  </div>
+  <a href="/atas/new" class="btn btn-primary">+ Nova ATA</a>
+</div>
+
+<!-- Pendentes -->
+<section class="section">
+  <h2 class="section-title">
+    <span class="badge badge-warn">{{ pending | length }}</span>
+    Aguardando Minha Assinatura
+  </h2>
+
+  {% if pending %}
+  <div class="cards-grid">
+    {% for a in pending %}
+    <a href="/atas/{{ a.ata_id }}" class="card card-pending">
+      <div class="card-header-row">
+        <span class="status-dot pending"></span>
+        <span class="card-label">Pendente</span>
+      </div>
+      <h3 class="card-title">{{ a.ata.title }}</h3>
+      <p class="card-meta">
+        Criado por {{ a.ata.created_by_name or a.ata.created_by_email }}
+        {% if a.ata.meeting_date %} · Reunião: {{ a.ata.meeting_date }}{% endif %}
+      </p>
+      <span class="card-action">Ler e assinar →</span>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="empty-state">
+    <span class="empty-icon">✅</span>
+    <p>Nenhuma ATA pendente de assinatura.</p>
+  </div>
+  {% endif %}
+</section>
+
+<!-- ATAs criadas por mim -->
+{% if created %}
+<section class="section">
+  <h2 class="section-title">ATAs que Criei</h2>
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Data da Reunião</th>
+          <th>Assinaturas</th>
+          <th>Criado em</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ata in created %}
+        {% set signed = ata.assignments | selectattr("signed_at") | list | length %}
+        {% set total = ata.assignments | length %}
+        <tr>
+          <td><a href="/atas/{{ ata.id }}" class="link">{{ ata.title }}</a></td>
+          <td>{{ ata.meeting_date or "—" }}</td>
+          <td>
+            <div class="progress-inline">
+              <div class="progress-bar-sm">
+                <div class="progress-fill" style="width: {% if total %}{{ (signed / total * 100) | int }}{% else %}0{% endif %}%"></div>
+              </div>
+              <span class="progress-label">{{ signed }}/{{ total }}</span>
+            </div>
+          </td>
+          <td class="text-muted">{{ ata.created_at.strftime('%d/%m/%Y') if ata.created_at else '—' }}</td>
+          <td><a href="/atas/{{ ata.id }}/status" class="btn btn-ghost btn-sm">Ver status</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+
+<!-- Assinadas -->
+{% if signed %}
+<section class="section">
+  <h2 class="section-title">ATAs que Assinei</h2>
+  <div class="cards-grid cards-grid-sm">
+    {% for a in signed %}
+    <a href="/atas/{{ a.ata_id }}" class="card card-signed">
+      <div class="card-header-row">
+        <span class="status-dot signed"></span>
+        <span class="card-label signed">Assinado em {{ a.signed_at.strftime('%d/%m/%Y') if a.signed_at else '' }}</span>
+      </div>
+      <h3 class="card-title">{{ a.ata.title }}</h3>
+      <p class="card-meta">{{ a.ata.created_by_name or a.ata.created_by_email }}</p>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block title %}Status — {{ ata.title }}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div>
+    <a href="/atas/{{ ata.id }}" class="back-link">← Ver ATA</a>
+    <h1 class="page-title">Status de Assinaturas</h1>
+    <p class="page-sub">{{ ata.title }}</p>
+  </div>
+  <a href="/atas/{{ ata.id }}" class="btn btn-ghost">Ver Documento</a>
+</div>
+
+<!-- Summary -->
+<div class="stats-row">
+  <div class="stat-card">
+    <span class="stat-number">{{ total_count }}</span>
+    <span class="stat-label">Destinatários</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number stat-green">{{ signed_count }}</span>
+    <span class="stat-label">Assinaram</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number stat-warn">{{ total_count - signed_count }}</span>
+    <span class="stat-label">Pendentes</span>
+  </div>
+</div>
+
+{% if total_count > 0 %}
+<div class="progress-section">
+  <div class="progress-bar-lg">
+    <div class="progress-fill-lg" style="width: {{ (signed_count / total_count * 100) | int }}%"></div>
+  </div>
+  <span class="progress-pct">{{ (signed_count / total_count * 100) | int }}% concluído</span>
+</div>
+{% endif %}
+
+<!-- Table -->
+<div class="table-wrap">
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>E-mail Enviado</th>
+        <th>Status</th>
+        <th>Data/Hora da Assinatura</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in ata.assignments %}
+      <tr>
+        <td>{{ a.user_name or "—" }}</td>
+        <td class="text-muted">{{ a.user_email }}</td>
+        <td>
+          {% if a.email_sent %}
+            <span class="badge badge-success">Enviado</span>
+          {% else %}
+            <span class="badge badge-neutral">Não enviado</span>
+          {% endif %}
+        </td>
+        <td>
+          {% if a.signed_at %}
+            <span class="badge badge-success">✅ Assinado</span>
+          {% else %}
+            <span class="badge badge-warn">⏳ Pendente</span>
+          {% endif %}
+        </td>
+        <td class="text-muted">
+          {{ a.signed_at.strftime('%d/%m/%Y às %H:%M') if a.signed_at else '—' }}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<!-- ATA info -->
+<div class="meta-box">
+  <h3 class="meta-title">Informações da ATA</h3>
+  <div class="meta-grid">
+    <div class="meta-item">
+      <span class="meta-key">Criado por</span>
+      <span class="meta-val">{{ ata.created_by_name or ata.created_by_email }}</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-key">Data da reunião</span>
+      <span class="meta-val">{{ ata.meeting_date or "Não informada" }}</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-key">Criado em</span>
+      <span class="meta-val">{{ ata.created_at.strftime('%d/%m/%Y às %H:%M') if ata.created_at else '—' }}</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-key">Documento</span>
+      <span class="meta-val">
+        <a href="{{ ata.sharepoint_url }}" target="_blank" class="link">Abrir PDF ↗</a>
+      </span>
+    </div>
+  </div>
+</div>
+{% endblock %}

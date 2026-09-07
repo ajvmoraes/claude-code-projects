@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar — Sistema de ATAs</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-logo">📋</div>
+      <h1 class="login-title">Sistema de ATAs</h1>
+      <p class="login-subtitle">Controle de Presença e Ciência</p>
+
+      {% if error %}
+      <div class="alert alert-error">
+        <span>⚠️</span> {{ error }}
+      </div>
+      {% endif %}
+
+      <a href="/login" class="btn btn-primary btn-lg btn-ms">
+        <svg width="20" height="20" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="9" height="9" fill="#F25022"/>
+          <rect x="11" y="1" width="9" height="9" fill="#7FBA00"/>
+          <rect x="1" y="11" width="9" height="9" fill="#00A4EF"/>
+          <rect x="11" y="11" width="9" height="9" fill="#FFB900"/>
+        </svg>
+        Entrar com Microsoft 365
+      </a>
+
+      <p class="login-note">
+        Utilizamos sua conta corporativa Microsoft para autenticação segura.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

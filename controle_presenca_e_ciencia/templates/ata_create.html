@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Nova ATA{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div>
+    <h1 class="page-title">Nova ATA</h1>
+    <p class="page-sub">Preencha os dados e selecione os participantes que devem assinar</p>
+  </div>
+</div>
+
+{% if error %}
+<div class="alert alert-error" style="margin-bottom:24px;">
+  <span>⚠️</span> {{ error }}
+</div>
+{% endif %}
+
+<div class="form-layout">
+  <form method="post" action="/atas/new" id="ata-form">
+
+    <!-- Título -->
+    <div class="field-group">
+      <label class="field-label" for="title">Título da ATA <span class="required">*</span></label>
+      <input class="field-input" type="text" id="title" name="title"
+             placeholder="Ex: Reunião de Planejamento Q2 2026" required>
+    </div>
+
+    <!-- Data da reunião -->
+    <div class="field-group">
+      <label class="field-label" for="meeting_date">Data da Reunião</label>
+      <input class="field-input" type="date" id="meeting_date" name="meeting_date">
+    </div>
+
+    <!-- Descrição -->
+    <div class="field-group">
+      <label class="field-label" for="description">Descrição / Observações</label>
+      <textarea class="field-input field-textarea" id="description" name="description"
+                placeholder="Resumo breve da pauta ou observações relevantes (opcional)"></textarea>
+    </div>
+
+    <!-- URL SharePoint -->
+    <div class="field-group">
+      <label class="field-label" for="sharepoint_url">Link do PDF no SharePoint <span class="required">*</span></label>
+      <input class="field-input" type="url" id="sharepoint_url" name="sharepoint_url"
+             placeholder="https://seudominio.sharepoint.com/..." required>
+      <p class="field-hint">Cole aqui o link direto para o arquivo PDF no SharePoint.</p>
+    </div>
+
+    <!-- Destinatários -->
+    <div class="field-group">
+      <label class="field-label">Destinatários <span class="required">*</span></label>
+      <p class="field-hint">Busque pelo nome ou e-mail dos participantes que devem assinar.</p>
+
+      <div class="user-search-wrap">
+        <input class="field-input" type="text" id="user-search"
+               placeholder="Buscar usuário no Microsoft 365..." autocomplete="off">
+        <div class="user-dropdown" id="user-dropdown"></div>
+      </div>
+
+      <div class="chips-container" id="chips-container">
+        <span class="chips-empty" id="chips-empty">Nenhum destinatário selecionado.</span>
+      </div>
+
+      <!-- Hidden field carrying the selected recipients as JSON -->
+      <input type="hidden" name="recipients_json" id="recipients-json" value="[]">
+    </div>
+
+    <div class="form-actions">
+      <a href="/" class="btn btn-ghost">Cancelar</a>
+      <button type="submit" class="btn btn-primary" id="submit-btn">
+        Criar ATA e Enviar Notificações
+      </button>
+    </div>
+  </form>
+</div>
+{% endblock %}

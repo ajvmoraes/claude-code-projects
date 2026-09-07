@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block title %}{{ ata.title }} — ATA{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div>
+    <a href="/" class="back-link">← Voltar ao Dashboard</a>
+    <h1 class="page-title">{{ ata.title }}</h1>
+    <p class="page-sub">
+      Criado por {{ ata.created_by_name or ata.created_by_email }}
+      {% if ata.meeting_date %} · Reunião: {{ ata.meeting_date }}{% endif %}
+      · {{ ata.created_at.strftime('%d/%m/%Y às %H:%M') if ata.created_at else '' }}
+    </p>
+  </div>
+  {% if is_creator %}
+  <a href="/atas/{{ ata.id }}/status" class="btn btn-ghost">Ver Assinaturas</a>
+  {% endif %}
+</div>
+
+{% if ata.description %}
+<div class="description-box">
+  <p>{{ ata.description }}</p>
+</div>
+{% endif %}
+
+<!-- PDF Viewer -->
+<div class="pdf-section">
+  <div class="pdf-toolbar">
+    <span class="pdf-label">📄 Documento da ATA</span>
+    <a href="{{ ata.sharepoint_url }}" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+      Abrir no SharePoint ↗
+    </a>
+  </div>
+
+  <div class="pdf-frame-wrap">
+    <iframe
+      class="pdf-frame"
+      src="{{ ata.sharepoint_url }}"
+      title="ATA — {{ ata.title }}"
+      allowfullscreen>
+    </iframe>
+    <div class="pdf-fallback" id="pdf-fallback" style="display:none;">
+      <span class="fallback-icon">📄</span>
+      <p>O documento não pôde ser exibido aqui.<br>Abra-o diretamente no SharePoint para visualizar.</p>
+      <a href="{{ ata.sharepoint_url }}" target="_blank" rel="noopener" class="btn btn-primary">
+        Abrir PDF no SharePoint ↗
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Signing section -->
+<div class="sign-section">
+  {% if not assignment %}
+    <!-- User is not in the recipients list -->
+    <div class="sign-card sign-card-info">
+      <span class="sign-icon">ℹ️</span>
+      <div>
+        <h3>Você não é destinatário desta ATA</h3>
+        <p>Apenas os participantes listados pelo criador podem assinar este documento.</p>
+      </div>
+    </div>
+
+  {% elif assignment.signed_at %}
+    <!-- Already signed -->
+    <div class="sign-card sign-card-success">
+      <span class="sign-icon">✅</span>
+      <div>
+        <h3>Você assinou esta ATA</h3>
+        <p>Assinatura registrada em <strong>{{ assignment.signed_at.strftime('%d/%m/%Y às %H:%M') }}</strong></p>
+      </div>
+    </div>
+
+  {% else %}
+    <!-- Pending signature -->
+    <div class="sign-card sign-card-pending">
+      <span class="sign-icon">✍️</span>
+      <div class="sign-content">
+        <h3>Assinatura Pendente</h3>
+        <p>Após ler o documento acima, confirme que está ciente do conteúdo:</p>
+
+        <label class="checkbox-label" for="agree-check">
+          <input type="checkbox" id="agree-check" onchange="toggleSign(this)">
+          <span class="checkbox-text">
+            Li, estou ciente e concordo com o conteúdo desta ATA de reunião.
+          </span>
+        </label>
+
+        <form method="post" action="/atas/{{ ata.id }}/sign" id="sign-form">
+          <button type="submit" class="btn btn-primary btn-lg" id="sign-btn" disabled>
+            ✅ Assinar ATA
+          </button>
+        </form>
+
+        <p class="sign-note">
+          Ao assinar, seu nome, e-mail, data/hora e endereço IP serão registrados como comprovante.
+        </p>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+<script>
+function toggleSign(checkbox) {
+  document.getElementById('sign-btn').disabled = !checkbox.checked;
+}
+
+// Show fallback if iframe fails to load
+const iframe = document.querySelector('.pdf-frame');
+if (iframe) {
+  iframe.addEventListener('error', () => {
+    iframe.style.display = 'none';
+    document.getElementById('pdf-fallback').style.display = 'flex';
+  });
+  // Timeout fallback for cross-origin blocking
+  setTimeout(() => {
+    try {
+      const h = iframe.contentWindow?.document?.body;
+      if (!h) throw new Error();
+    } catch {
+      // Silently keep iframe — likely cross-origin, user may be logged in to SharePoint
+    }
+  }, 3000);
+}
+</script>
+{% endblock %}
