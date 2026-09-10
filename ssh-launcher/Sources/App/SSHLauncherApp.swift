@@ -5,7 +5,7 @@ struct SSHLauncherApp: App {
     @StateObject private var store = ServerStore()
 
     var body: some Scene {
-        WindowGroup("SSH Launcher") {
+        WindowGroup("VEIVO SSH") {
             ContentView()
                 .environmentObject(store)
                 .frame(minWidth: 900, minHeight: 560)

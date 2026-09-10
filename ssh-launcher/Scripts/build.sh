@@ -6,9 +6,9 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 BUILD_DIR="$ROOT/.build"
-APP_NAME="SSHLauncher"
+APP_NAME="VEIVO SSH"       # .app bundle name shown in Finder/Dock/Spotlight
+BINARY_NAME="SSHLauncher"  # internal executable name (must match Info.plist's CFBundleExecutable)
 APP_BUNDLE="$BUILD_DIR/$APP_NAME.app"
-BINARY_NAME="$APP_NAME"
 
 echo "==> Limpando build anterior"
 rm -rf "$BUILD_DIR"
