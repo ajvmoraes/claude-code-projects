@@ -36,9 +36,12 @@ swiftc \
   -o "$APP_BUNDLE/Contents/MacOS/$BINARY_NAME" \
   "${SOURCES[@]}"
 
-echo "==> Gerando Info.plist"
+echo "==> Gerando Info.plist e ícone"
 cp "$ROOT/Resources/Info.plist" "$APP_BUNDLE/Contents/Info.plist"
 printf 'APPL????' > "$APP_BUNDLE/Contents/PkgInfo"
+if [ -f "$ROOT/Resources/AppIcon.icns" ]; then
+  cp "$ROOT/Resources/AppIcon.icns" "$APP_BUNDLE/Contents/Resources/AppIcon.icns"
+fi
 
 echo "==> Assinando (ad-hoc, uso local)"
 codesign --force --deep --sign - "$APP_BUNDLE"

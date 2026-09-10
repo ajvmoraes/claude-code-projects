@@ -18,6 +18,8 @@
     <string>????</string>
     <key>CFBundleExecutable</key>
     <string>SSHLauncher</string>
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
     <key>LSMinimumSystemVersion</key>
     <string>13.0</string>
     <key>NSHighResolutionCapable</key>
