@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0AB42404AC335C8861190A9F /* ServerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D33B2D33B73107AE2175C3 /* ServerStore.swift */; };
+		1206B719C1C6C1AA1FFF076A /* PoweredByVeivo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CE83CDAEC5DDD684AC31074 /* PoweredByVeivo.png */; };
+		1E15CE9F4FD01880550519E9 /* CryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167035F6E6F9D7D9C3E847A /* CryptoService.swift */; };
+		51E9922D97DC75F2FB5D5E20 /* Citadel in Frameworks */ = {isa = PBXBuildFile; productRef = EE47AC700AAC97E5353B71B4 /* Citadel */; };
+		53ED7F869690CB93A17FECCC /* NIOSSH in Frameworks */ = {isa = PBXBuildFile; productRef = 8AB5CDCB488FFAA704F3DECB /* NIOSSH */; };
+		5988EE99E114C1F55942D977 /* ServerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90EAAE72BCC6360E02ACF2F /* ServerRowView.swift */; };
+		5D400F9B99E4E54044A1752F /* SSHTerminalSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B5712308AA6D750BD81222 /* SSHTerminalSession.swift */; };
+		9FB0EEF2C1D2257E06D8A63B /* ServerFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4299B2760C90A0A8EB1B336F /* ServerFormView.swift */; };
+		A141B27906C8876AFA0774A6 /* VeivoSSHApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55619A23AC68B1008FEB1AF5 /* VeivoSSHApp.swift */; };
+		AF2861C992FA7DEFDE66FF06 /* TerminalAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB78393560CE2E49D3E33A /* TerminalAppearance.swift */; };
+		B673C715AEEC3574D47A3FAA /* SwiftTerm in Frameworks */ = {isa = PBXBuildFile; productRef = 9E4B3DDC158A4D0BF66BFDB6 /* SwiftTerm */; };
+		B75425BDA423C1C34F44E9F9 /* TerminalConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E701D7ADE70D618244F0B2A /* TerminalConnectionView.swift */; };
+		BAC2584AB3DEB58048111373 /* LogoFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC4DD7D9B78073B91A731D2 /* LogoFooterView.swift */; };
+		C22C65958D493023A2A1988C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0518C292825900CCB76BE691 /* Assets.xcassets */; };
+		C2F2BBEA6805CD9CEADDA3B5 /* TerminalScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E84D0D54A13340A94066D8E /* TerminalScreenView.swift */; };
+		CC445768610A6D5591A14EFA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EB7C93CD26195789E32449 /* SettingsView.swift */; };
+		DF333AB61CDA9C3DF0D78CD2 /* ExportImportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389F867A0B291730A27F8C9C /* ExportImportService.swift */; };
+		E2AE845A771867E56D7F9B81 /* ImportExportSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439DD9B7E522696A28CF282E /* ImportExportSheets.swift */; };
+		E99067F0D2E3DF2BA3685471 /* SSHServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F385EE3BE56605E742D79A /* SSHServer.swift */; };
+		F501398E75E16D916E7BE301 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF756F3B094FAC14E48953F /* RootView.swift */; };
+		FD363F4D947FA706476DC660 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A660754F0B6F2C092D23D765 /* KeychainService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		03B5712308AA6D750BD81222 /* SSHTerminalSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHTerminalSession.swift; sourceTree = "<group>"; };
+		0518C292825900CCB76BE691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		07AB78393560CE2E49D3E33A /* TerminalAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalAppearance.swift; sourceTree = "<group>"; };
+		1E84D0D54A13340A94066D8E /* TerminalScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalScreenView.swift; sourceTree = "<group>"; };
+		389F867A0B291730A27F8C9C /* ExportImportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportImportService.swift; sourceTree = "<group>"; };
+		4299B2760C90A0A8EB1B336F /* ServerFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerFormView.swift; sourceTree = "<group>"; };
+		439DD9B7E522696A28CF282E /* ImportExportSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportExportSheets.swift; sourceTree = "<group>"; };
+		55619A23AC68B1008FEB1AF5 /* VeivoSSHApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeivoSSHApp.swift; sourceTree = "<group>"; };
+		5CF756F3B094FAC14E48953F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		6CE83CDAEC5DDD684AC31074 /* PoweredByVeivo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PoweredByVeivo.png; sourceTree = "<group>"; };
+		6E701D7ADE70D618244F0B2A /* TerminalConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalConnectionView.swift; sourceTree = "<group>"; };
+		7167035F6E6F9D7D9C3E847A /* CryptoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoService.swift; sourceTree = "<group>"; };
+		A660754F0B6F2C092D23D765 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		A8EB7C93CD26195789E32449 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CDC4DD7D9B78073B91A731D2 /* LogoFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoFooterView.swift; sourceTree = "<group>"; };
+		D8F385EE3BE56605E742D79A /* SSHServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHServer.swift; sourceTree = "<group>"; };
+		D90EAAE72BCC6360E02ACF2F /* ServerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRowView.swift; sourceTree = "<group>"; };
+		D9F1FD4350C8DA7DFCDB9DF2 /* VeivoSSH.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = VeivoSSH.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0D33B2D33B73107AE2175C3 /* ServerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStore.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7DC72BCD2A1AFE08EA08CA67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B673C715AEEC3574D47A3FAA /* SwiftTerm in Frameworks */,
+				51E9922D97DC75F2FB5D5E20 /* Citadel in Frameworks */,
+				53ED7F869690CB93A17FECCC /* NIOSSH in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1EFB4BC3C5501F492D279468 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A491FA9AE3EA7B549235883D /* App */,
+				549BB840ED3FFED34A13DA0F /* Networking */,
+				B90B3A24543FDB74AA4C0368 /* Resources */,
+				520FDDBA0E71757C096ACAAF /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4BB554BEC0DA213D3C414338 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9F1FD4350C8DA7DFCDB9DF2 /* VeivoSSH.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		520FDDBA0E71757C096ACAAF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				439DD9B7E522696A28CF282E /* ImportExportSheets.swift */,
+				CDC4DD7D9B78073B91A731D2 /* LogoFooterView.swift */,
+				5CF756F3B094FAC14E48953F /* RootView.swift */,
+				4299B2760C90A0A8EB1B336F /* ServerFormView.swift */,
+				D90EAAE72BCC6360E02ACF2F /* ServerRowView.swift */,
+				A8EB7C93CD26195789E32449 /* SettingsView.swift */,
+				07AB78393560CE2E49D3E33A /* TerminalAppearance.swift */,
+				6E701D7ADE70D618244F0B2A /* TerminalConnectionView.swift */,
+				1E84D0D54A13340A94066D8E /* TerminalScreenView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		549BB840ED3FFED34A13DA0F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				03B5712308AA6D750BD81222 /* SSHTerminalSession.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		82B2B5EAC8055D7A69AEF563 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				7167035F6E6F9D7D9C3E847A /* CryptoService.swift */,
+				389F867A0B291730A27F8C9C /* ExportImportService.swift */,
+				A660754F0B6F2C092D23D765 /* KeychainService.swift */,
+				F0D33B2D33B73107AE2175C3 /* ServerStore.swift */,
+			);
+			name = Storage;
+			path = "../ssh-launcher/Sources/Storage";
+			sourceTree = "<group>";
+		};
+		A491FA9AE3EA7B549235883D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				55619A23AC68B1008FEB1AF5 /* VeivoSSHApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B2AE7B13CDC6A49E10159A99 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D8F385EE3BE56605E742D79A /* SSHServer.swift */,
+			);
+			name = Models;
+			path = "../ssh-launcher/Sources/Models";
+			sourceTree = "<group>";
+		};
+		B90B3A24543FDB74AA4C0368 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6CE83CDAEC5DDD684AC31074 /* PoweredByVeivo.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E8D40F0002A2499C1222BB86 = {
+			isa = PBXGroup;
+			children = (
+				0518C292825900CCB76BE691 /* Assets.xcassets */,
+				B2AE7B13CDC6A49E10159A99 /* Models */,
+				1EFB4BC3C5501F492D279468 /* Sources */,
+				82B2B5EAC8055D7A69AEF563 /* Storage */,
+				4BB554BEC0DA213D3C414338 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A3054A42D78A4CB67D417E2 /* VeivoSSH */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CA4AE93011FD97AC31E361F /* Build configuration list for PBXNativeTarget "VeivoSSH" */;
+			buildPhases = (
+				294BF45422D567C6FF8FB21F /* Sources */,
+				87B59D44ACE6FD326452BD26 /* Resources */,
+				7DC72BCD2A1AFE08EA08CA67 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VeivoSSH;
+			packageProductDependencies = (
+				9E4B3DDC158A4D0BF66BFDB6 /* SwiftTerm */,
+				EE47AC700AAC97E5353B71B4 /* Citadel */,
+				8AB5CDCB488FFAA704F3DECB /* NIOSSH */,
+			);
+			productName = VeivoSSH;
+			productReference = D9F1FD4350C8DA7DFCDB9DF2 /* VeivoSSH.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4DA8B3547E6CAF2FE1392812 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					5A3054A42D78A4CB67D417E2 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 477B35E8B178203FAD466BB6 /* Build configuration list for PBXProject "VeivoSSH" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = E8D40F0002A2499C1222BB86;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				20F16578DF6957A61E3E564C /* XCRemoteSwiftPackageReference "Citadel" */,
+				806D908D3B8EB8682604AE4D /* XCRemoteSwiftPackageReference "swift-nio-ssh" */,
+				06D4B7201A8C319C33BFEE52 /* XCRemoteSwiftPackageReference "SwiftTerm" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4BB554BEC0DA213D3C414338 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A3054A42D78A4CB67D417E2 /* VeivoSSH */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		87B59D44ACE6FD326452BD26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C22C65958D493023A2A1988C /* Assets.xcassets in Resources */,
+				1206B719C1C6C1AA1FFF076A /* PoweredByVeivo.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		294BF45422D567C6FF8FB21F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E15CE9F4FD01880550519E9 /* CryptoService.swift in Sources */,
+				DF333AB61CDA9C3DF0D78CD2 /* ExportImportService.swift in Sources */,
+				E2AE845A771867E56D7F9B81 /* ImportExportSheets.swift in Sources */,
+				FD363F4D947FA706476DC660 /* KeychainService.swift in Sources */,
+				BAC2584AB3DEB58048111373 /* LogoFooterView.swift in Sources */,
+				F501398E75E16D916E7BE301 /* RootView.swift in Sources */,
+				E99067F0D2E3DF2BA3685471 /* SSHServer.swift in Sources */,
+				5D400F9B99E4E54044A1752F /* SSHTerminalSession.swift in Sources */,
+				9FB0EEF2C1D2257E06D8A63B /* ServerFormView.swift in Sources */,
+				5988EE99E114C1F55942D977 /* ServerRowView.swift in Sources */,
+				0AB42404AC335C8861190A9F /* ServerStore.swift in Sources */,
+				CC445768610A6D5591A14EFA /* SettingsView.swift in Sources */,
+				AF2861C992FA7DEFDE66FF06 /* TerminalAppearance.swift in Sources */,
+				B75425BDA423C1C34F44E9F9 /* TerminalConnectionView.swift in Sources */,
+				C2F2BBEA6805CD9CEADDA3B5 /* TerminalScreenView.swift in Sources */,
+				A141B27906C8876AFA0774A6 /* VeivoSSHApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		03042D32775729F75D2BFE3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		10971C1C0C77F8F3CBF80059 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3A298C31BDD01F583F76CD61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "VEIVO SSH";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.avs.veivossh;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A747CCF0A286C3EC0FAFB9F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "VEIVO SSH";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.avs.veivossh;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CA4AE93011FD97AC31E361F /* Build configuration list for PBXNativeTarget "VeivoSSH" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A747CCF0A286C3EC0FAFB9F6 /* Debug */,
+				3A298C31BDD01F583F76CD61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		477B35E8B178203FAD466BB6 /* Build configuration list for PBXProject "VeivoSSH" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10971C1C0C77F8F3CBF80059 /* Debug */,
+				03042D32775729F75D2BFE3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		06D4B7201A8C319C33BFEE52 /* XCRemoteSwiftPackageReference "SwiftTerm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/migueldeicaza/SwiftTerm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.20.0;
+			};
+		};
+		20F16578DF6957A61E3E564C /* XCRemoteSwiftPackageReference "Citadel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/orlandos-nl/Citadel.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.12.1;
+			};
+		};
+		806D908D3B8EB8682604AE4D /* XCRemoteSwiftPackageReference "swift-nio-ssh" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Wellz26/swift-nio-ssh.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8AB5CDCB488FFAA704F3DECB /* NIOSSH */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 806D908D3B8EB8682604AE4D /* XCRemoteSwiftPackageReference "swift-nio-ssh" */;
+			productName = NIOSSH;
+		};
+		9E4B3DDC158A4D0BF66BFDB6 /* SwiftTerm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 06D4B7201A8C319C33BFEE52 /* XCRemoteSwiftPackageReference "SwiftTerm" */;
+			productName = SwiftTerm;
+		};
+		EE47AC700AAC97E5353B71B4 /* Citadel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20F16578DF6957A61E3E564C /* XCRemoteSwiftPackageReference "Citadel" */;
+			productName = Citadel;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4DA8B3547E6CAF2FE1392812 /* Project object */;
+}

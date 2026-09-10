@@ -44,6 +44,8 @@ final class ServerStore: ObservableObject {
     func delete(_ server: SSHServer) {
         servers.removeAll { $0.id == server.id }
         KeychainService.deletePassword(for: server.id)
+        KeychainService.deletePrivateKeyText(for: server.id)
+        KeychainService.deleteKeyPassphrase(for: server.id)
         save()
     }
 
