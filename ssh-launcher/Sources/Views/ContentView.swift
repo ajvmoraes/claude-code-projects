@@ -9,6 +9,7 @@ struct OpenSession: Identifiable {
 
 struct ContentView: View {
     @EnvironmentObject var store: ServerStore
+    @EnvironmentObject var appearance: TerminalAppearance
 
     @State private var searchText = ""
     @State private var selectedServerID: SSHServer.ID?
@@ -131,6 +132,9 @@ struct ContentView: View {
             }
         }
         .searchable(text: $searchText, placement: .sidebar, prompt: "Buscar servidor")
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            LogoFooterView()
+        }
         .navigationSplitViewColumnWidth(min: 220, ideal: 260)
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
@@ -172,6 +176,7 @@ struct ContentView: View {
                 ForEach(sessions) { session in
                     TerminalHostView(
                         server: session.server,
+                        appearance: appearance,
                         onTitleChange: { title in updateTitle(for: session.id, title: title) },
                         onProcessExited: { _ in closeSession(id: session.id) }
                     )
@@ -186,6 +191,15 @@ struct ContentView: View {
         }
         .toolbar {
             ToolbarItemGroup(placement: .automatic) {
+                Button { appearance.zoomOut() } label: {
+                    Image(systemName: "textformat.size.smaller")
+                }
+                .help("Diminuir fonte do terminal (⌘−)")
+                Button { appearance.zoomIn() } label: {
+                    Image(systemName: "textformat.size.larger")
+                }
+                .help("Aumentar fonte do terminal (⌘+)")
+                Divider()
                 Button { showingImport = true } label: {
                     Label("Importar", systemImage: "square.and.arrow.down")
                 }

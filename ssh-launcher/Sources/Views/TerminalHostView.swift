@@ -5,6 +5,7 @@ import AppKit
 /// using the vendored SwiftTerm `LocalProcessTerminalView`. One instance per open tab.
 struct TerminalHostView: NSViewRepresentable {
     let server: SSHServer
+    var appearance: TerminalAppearance
     var onTitleChange: (String) -> Void = { _ in }
     var onProcessExited: (Int32?) -> Void = { _ in }
 
@@ -16,6 +17,7 @@ struct TerminalHostView: NSViewRepresentable {
         let view = LocalProcessTerminalView(frame: .zero)
         view.processDelegate = context.coordinator
         context.coordinator.terminalView = view
+        applyAppearance(to: view)
 
         let storedPassword = server.authMethod == .password ? KeychainService.readPassword(for: server.id) : nil
         view.startProcess(executable: "/usr/bin/ssh", args: server.buildSSHArguments())
@@ -27,8 +29,22 @@ struct TerminalHostView: NSViewRepresentable {
     }
 
     func updateNSView(_ nsView: LocalProcessTerminalView, context: Context) {
-        // Nothing to sync: the process is spawned once in makeNSView and lives for
-        // as long as this tab exists.
+        applyAppearance(to: nsView)
+    }
+
+    private func applyAppearance(to view: LocalProcessTerminalView) {
+        let desiredFont = appearance.nsFont
+        if view.font != desiredFont {
+            view.font = desiredFont
+        }
+        let fg = NSColor(appearance.foregroundColor)
+        if view.nativeForegroundColor != fg {
+            view.nativeForegroundColor = fg
+        }
+        let bg = NSColor(appearance.backgroundColor)
+        if view.nativeBackgroundColor != bg {
+            view.nativeBackgroundColor = bg
+        }
     }
 
     static func dismantleNSView(_ nsView: LocalProcessTerminalView, coordinator: Coordinator) {

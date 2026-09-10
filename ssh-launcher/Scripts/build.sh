@@ -42,6 +42,9 @@ printf 'APPL????' > "$APP_BUNDLE/Contents/PkgInfo"
 if [ -f "$ROOT/Resources/AppIcon.icns" ]; then
   cp "$ROOT/Resources/AppIcon.icns" "$APP_BUNDLE/Contents/Resources/AppIcon.icns"
 fi
+if [ -f "$ROOT/Resources/PoweredByVeivo.png" ]; then
+  cp "$ROOT/Resources/PoweredByVeivo.png" "$APP_BUNDLE/Contents/Resources/PoweredByVeivo.png"
+fi
 
 echo "==> Assinando (ad-hoc, uso local)"
 codesign --force --deep --sign - "$APP_BUNDLE"
