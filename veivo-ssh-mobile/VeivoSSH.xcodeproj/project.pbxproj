@@ -48,7 +48,7 @@
 		CDC4DD7D9B78073B91A731D2 /* LogoFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoFooterView.swift; sourceTree = "<group>"; };
 		D8F385EE3BE56605E742D79A /* SSHServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHServer.swift; sourceTree = "<group>"; };
 		D90EAAE72BCC6360E02ACF2F /* ServerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRowView.swift; sourceTree = "<group>"; };
-		D9F1FD4350C8DA7DFCDB9DF2 /* VeivoSSH.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = VeivoSSH.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9F1FD4350C8DA7DFCDB9DF2 /* VeivoSSH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeivoSSH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D33B2D33B73107AE2175C3 /* ServerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -385,6 +385,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5Y4T9G5XTS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "VEIVO SSH";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -410,6 +411,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5Y4T9G5XTS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "VEIVO SSH";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
